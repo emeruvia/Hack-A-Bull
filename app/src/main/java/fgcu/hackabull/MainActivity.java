@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Debug;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,6 +31,14 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.mongodb.stitch.android.StitchClient;
+import com.mongodb.stitch.android.StitchClientFactory;
+import com.mongodb.stitch.android.services.mongodb.MongoClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,10 +73,36 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
     private View mProgressView;
     private View mLoginFormView;
 
+    //Stitch
+    private GoogleApiClient _googleApiClient;
+    private StitchClient _client;
+    private MongoClient _mongoClient;
+    private String StichTag = "StichClient";
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Set up Mongo stitchy
+        StitchClientFactory.create(this, "your-app-id").addOnCompleteListener(new OnCompleteListener<StitchClient>() {
+            @Override
+            public void onComplete(@NonNull Task<StitchClient> task) {
+                _client = task.getResult();
+                _mongoClient = new MongoClient(_client, "mongodb-atlas");
+            }
+        });
+
+        if(_client != null){
+            Log.d(StichTag,"Client is null");
+           // _mongoClient.getDatabase("UserAccounts").getCollection("Accounts");
+        }
+
+        //_client.addAuthListener(new MyAuthListener(this));
+        //_mongoClient = new MongoClient(_client, "mongodb-atlas");
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
