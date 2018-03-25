@@ -55,11 +55,18 @@ public class RequestRecyclerAdapter extends RecyclerView.Adapter<RequestRecycler
     }
 
     public class RequestRecyclerViewHolder extends RecyclerView.ViewHolder {
-        //TODO Add Layout items and ids
+            TextView helpType;
+            TextView helpDate;
+            TextView helpTime;
+            TextView helpLocation;
+
 
         public RequestRecyclerViewHolder(View view) {
             super(view);
-
+        helpDate = view.findViewById(R.id.help_date_textview);
+        helpLocation = view.findViewById(R.id.help_location_textview);
+        helpTime = view.findViewById(R.id.help_time_textview);
+        helpType = view.findViewById(R.id.help_type_textview);
         }
     }
 }
