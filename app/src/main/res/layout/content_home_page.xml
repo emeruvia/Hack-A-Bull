@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="fgcu.hackabull.DummyDrawer"
-    tools:showIn="@layout/app_bar_dummy_drawer">
+    tools:context="fgcu.hackabull.HomePageActivity"
+    tools:showIn="@layout/app_bar_home_page">
 
 </android.support.constraint.ConstraintLayout>

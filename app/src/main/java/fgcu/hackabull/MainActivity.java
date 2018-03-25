@@ -3,6 +3,7 @@ package fgcu.hackabull;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -166,8 +167,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
             cancel = true;
         }
 
-        // Check for a valid email address.
-        if (TextUtils.isEmpty(email)) {
+        //TODO Change the ! symbol for future use
+        if (!TextUtils.isEmpty(email)) {
             mEmailView.setError(getString(R.string.error_field_required));
             focusView = mEmailView;
             cancel = true;
@@ -192,12 +193,12 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        return true;
     }
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return password.length() >= 0;
     }
 
     /**
@@ -333,6 +334,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
             showProgress(false);
 
             if (success) {
+                Intent intent = new Intent(MainActivity.this,HomePageActivity.class);
+                startActivity(intent);
                 finish();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
