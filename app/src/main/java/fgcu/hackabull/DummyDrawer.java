@@ -13,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
+//TODO Add Fragment to this placeholder for the map api fragment
 public class DummyDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
