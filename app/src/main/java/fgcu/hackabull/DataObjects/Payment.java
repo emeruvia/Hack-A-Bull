@@ -5,7 +5,8 @@ package fgcu.hackabull.DataObjects;
  */
 
 public class Payment {
-    private String clientName;
+
+  private String clientName;
     private String handymanName;
     private String date;
     private String amount;
