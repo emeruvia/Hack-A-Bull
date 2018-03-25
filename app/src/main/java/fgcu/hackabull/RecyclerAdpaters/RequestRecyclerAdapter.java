@@ -41,6 +41,10 @@ public class RequestRecyclerAdapter extends RecyclerView.Adapter<RequestRecycler
     public void onBindViewHolder(final RequestRecyclerViewHolder holder, int position) {
 
 
+        holder.helpType.setText(requestList.get(position).getTypeOfHelp());
+        holder.helpTime.setText(requestList.get(position).getTime());
+        holder.helpLocation.setText(requestList.get(position).getLocation());
+        holder.helpDate.setText(requestList.get(position).getDate());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

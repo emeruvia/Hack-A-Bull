@@ -43,6 +43,10 @@ public class PaymentRecyclerAdapter extends RecyclerView.Adapter<PaymentRecycler
     public void onBindViewHolder(final PaymentRecyclerAdapter.PaymentRecyclerViewHolder holder, int position) {
         //TODO add data to views
 
+        holder.handyman.setText(paymentList.get(position).getHandymanName());
+        holder.client1Name.setText(paymentList.get(position).getClientName());
+        holder.paymentAmount.setText(paymentList.get(position).getAmount());
+        holder.date.setText(paymentList.get(position).getDate());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
