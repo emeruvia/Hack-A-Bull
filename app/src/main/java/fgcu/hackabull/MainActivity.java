@@ -31,6 +31,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,6 +43,9 @@ import com.mongodb.stitch.android.services.mongodb.MongoClient;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import fgcu.hackabull.DataObjects.MongoStitchery;
+import fgcu.hackabull.DataObjects.User;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -73,11 +77,9 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
     private View mProgressView;
     private View mLoginFormView;
 
+
     //Stitch
-    private GoogleApiClient _googleApiClient;
-    private StitchClient _client;
-    private MongoClient _mongoClient;
-    private String StichTag = "StichClient";
+    MongoStitchery mongy;
 
 
 
@@ -86,19 +88,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Set up Mongo stitchy
-        StitchClientFactory.create(this, "your-app-id").addOnCompleteListener(new OnCompleteListener<StitchClient>() {
-            @Override
-            public void onComplete(@NonNull Task<StitchClient> task) {
-                _client = task.getResult();
-                _mongoClient = new MongoClient(_client, "mongodb-atlas");
-            }
-        });
-
-        if(_client != null){
-            Log.d(StichTag,"Client is null");
-           // _mongoClient.getDatabase("UserAccounts").getCollection("Accounts");
-        }
+        //ConncetToMongy();
 
         //_client.addAuthListener(new MyAuthListener(this));
         //_mongoClient = new MongoClient(_client, "mongodb-atlas");
@@ -129,6 +119,21 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<C
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+    }
+
+    public void addUser(){
+        boolean success = mongy.insertUser(
+                new User("2398227160","Andrew","andrew@gmail.com"));
+
+        if(success){
+            Toast.makeText(this, "Registered!", Toast.LENGTH_SHORT);
+        }else{
+            Toast.makeText(this, "Failed Registration", Toast.LENGTH_SHORT);
+        }
+    }
+
+    private void ConncetToMongy(){
+        mongy = new MongoStitchery(this.getApplicationContext());
     }
 
     private void populateAutoComplete() {

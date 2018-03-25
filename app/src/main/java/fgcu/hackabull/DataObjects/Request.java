@@ -5,4 +5,5 @@ package fgcu.hackabull.DataObjects;
  */
 
 public class Request {
+
 }

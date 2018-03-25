@@ -1,8 +1,5 @@
 package fgcu.hackabull.DataObjects;
 
-import com.mongodb.stitch.android.StitchClient;
-import com.mongodb.stitch.android.services.mongodb.MongoClient;
-
 import org.bson.Document;
 
 /**
@@ -11,10 +8,7 @@ import org.bson.Document;
 
 public class User {
     private String phone, name, email;
-    private StitchClient _client;
-    private MongoClient _mongoClient;
-    private String StichTag = "StichClient";
-    private Document p;
+    private Document user;
 
 
     public User(String tele, String uName, String uEmail){
@@ -23,11 +17,11 @@ public class User {
         this.email = uEmail;
     }
 
-    public boolean insertDocument(){
-
-
-
-        return true;
+    public Document createDocument(){
+        user.append("Email", email);
+        user.append("Name", name);
+        user.append("Number", phone);
+        return user;
     }
 
     public String getPhone() {
