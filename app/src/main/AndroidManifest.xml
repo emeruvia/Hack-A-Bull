@@ -30,7 +30,11 @@
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity android:name=".PaymentsScreenActivity" />
-        <activity android:name=".RequestsActivity"></activity>
+        <activity android:name=".MakeRequestActivity" />
+        <activity
+            android:name=".RequestListActivity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
