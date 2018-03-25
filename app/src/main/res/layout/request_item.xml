@@ -5,16 +5,107 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardUseCompatPadding="true">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+        android:orientation="vertical">
 
-        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Type of Help"
+            android:textAlignment="center"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary">
+
+        </View>
+        <TextView
+            android:id="@+id/help_type_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Fix tire"
+            android:textAlignment="center"/>
 
     </LinearLayout>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+    </View>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="Date/Time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary">
+
+        </View>
+        <TextView
+            android:id="@+id/help_date_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="03/12/2014"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/help_time_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="11:00 a.m."
+            android:textAlignment="center"/>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+    </View>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"/>
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary">
+
+         </View>
+
+        <TextView
+            android:id="@+id/help_location_textview"
+            android:text="1234 drive st"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>
 
 </android.support.v7.widget.CardView>
