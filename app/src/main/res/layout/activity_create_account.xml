@@ -5,14 +5,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fgcu.hackabull.CreateAccount">
+    tools:context="fgcu.hackabull.CreateAccount"
+    android:background="@color/grey">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create Account"
         android:textSize="30dp"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textColor="@color/logoGold"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,7 +27,8 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="47dp"
-            android:hint="Name" />
+            android:hint="Name"
+            android:textColor="@color/textWrtie"/>
 
         <EditText
             android:id="@+id/email_edit_text"
@@ -34,7 +37,8 @@
             android:layout_alignStart="@+id/name_edit_text"
             android:layout_below="@+id/name_edit_text"
             android:layout_marginTop="58dp"
-            android:hint="Email" />
+            android:hint="Email"
+            android:textColor="@color/textWrtie"/>
 
         <EditText
             android:id="@+id/phone_edit_text"
@@ -43,7 +47,8 @@
             android:layout_alignStart="@+id/email_edit_text"
             android:layout_below="@+id/email_edit_text"
             android:layout_marginTop="69dp"
-            android:hint="Phone" />
+            android:hint="Phone"
+            android:textColor="@color/textWrtie"/>
 
         <Button
             android:id="@+id/create_account_button"
@@ -52,7 +57,11 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="41dp"
-            android:text="Create Account" />
+            android:text="Create Account"
+            android:textStyle="bold"
+            android:textColor="@color/textWrtie"
+            android:background="@color/logoGold"
+            android:textSize="18sp"/>
     </RelativeLayout>
 
 

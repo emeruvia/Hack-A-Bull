@@ -28,7 +28,7 @@ public class CreateAccount extends AppCompatActivity {
             String name1 = name.getText().toString();
             String phone1 = phone.getText().toString();
             String email = phone.getText().toString();
-            if(!name1.isEmpty() && !phone1.isEmpty() && email.isEmpty()){
+            if(!name1.isEmpty() && !phone1.isEmpty() && !email.isEmpty()){
                 Intent intent = new Intent(CreateAccount.this, MainActivity.class);
                 startActivity(intent);
                 Toast.makeText(CreateAccount.this,"Account Created", Toast.LENGTH_LONG).show();
