@@ -37,6 +37,10 @@ public class RequestListActivity extends AppCompatActivity implements RecyclerVi
                         .setAction("Action", null).show();
             }
         });
+        requests.add(new Request("Replace Tire","03/24/18","11:00a.m.","123 Drive blv."));
+        requests.add(new Request("Replace Tire","03/24/18","11:00a.m.","123 Drive blv."));
+        requests.add(new Request("Replace Tire","03/24/18","11:00a.m.","123 Drive blv."));
+        requests.add(new Request("Replace Tire","03/24/18","11:00a.m.","123 Drive blv."));
         recyclerView = findViewById(R.id.requests_recyclerview);
         requestRecyclerAdapter = new RequestRecyclerAdapter(requests,this);
         recyclerView.setAdapter(requestRecyclerAdapter);

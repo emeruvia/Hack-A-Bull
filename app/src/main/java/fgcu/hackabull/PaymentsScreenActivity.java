@@ -22,6 +22,10 @@ public class PaymentsScreenActivity extends AppCompatActivity implements Recycle
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payments_screen);
         recyclerView = findViewById(R.id.payment_recyclerview);
+        payments.add(new Payment("Bob Billibo Bob", "Joe Johnson","02/15/2018","$24"));
+        payments.add(new Payment("Bob Billibo Bob", "Joe Johnson","02/15/2018","$24"));
+        payments.add(new Payment("Bob Billibo Bob", "Joe Johnson","02/15/2018","$24"));
+        payments.add(new Payment("Bob Billibo Bob", "Joe Johnson","02/15/2018","$24"));
         paymentRecyclerAdapter = new PaymentRecyclerAdapter(payments,this);
         recyclerView.setAdapter(paymentRecyclerAdapter);
     }
